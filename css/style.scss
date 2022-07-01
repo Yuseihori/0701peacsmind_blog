@@ -1,0 +1,16 @@
+@use "colors"; //別のscssを読み込める
+
+body{
+    background: colors.$background;
+}
+nav{
+    background: colors.$key-color;
+    color: #FFFFFF;
+}
+
+
+footer{
+    background: colors.$key-color;
+    color: #FFFFFF;
+    text-align: center;
+}
