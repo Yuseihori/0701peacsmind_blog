@@ -12,8 +12,15 @@ require_once "head.php";
 
     <img src="image/fv.jpeg" alt="" class="w-100 mb-5">
 
+    <!-- 新着情報 -->
+    <section class="container my-5">
+        <div>2022.7.1 吉田塾開催中！</div>
+        <div>2022.6.30 吉田塾開催中！</div>
+        <div>2022.6.30 吉田塾開催中！</div>
+    </section>
 
-    <div class="container">
+
+    <section class="container">
         <div class="row">
             <div class="col-md-4">
                 <img src="image/fv.jpeg" alt="" class="img-fluid">
@@ -25,7 +32,7 @@ require_once "head.php";
                 <img src="image/fv.jpeg" alt="" class="img-fluid">
             </div>
         </div>
-    </div>
+    </section>
 
 
 
