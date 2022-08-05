@@ -20,7 +20,7 @@
             News
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href=".news_list.php">List</a></a></li>
+            <li><a class="dropdown-item" href="news_list.php">List</a></a></li>
             <li><a class="dropdown-item" href="news_regi_form.php">Register</a></li>
             <li><a class="dropdown-item" href="">Category</a></li>
           </ul>

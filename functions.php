@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', "On");
+require "core/config.php";
 
 /**
 *今日の日付を取得
@@ -19,6 +21,7 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 
+
 function connect()
 {
 $dsn = "mysql:host=DB_HOST;dbname=DB_NAMEcharset=utf8mb4";
@@ -33,4 +36,31 @@ try{
     echo '接続失敗'.$e->getMessage();
     exit;
 }
+}
+
+
+/**
+ * CSRF対策 - トークン発行
+ * @param void
+ * @return strings $csrf_token
+ */
+function setToken()
+{
+    $csrf_token = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = $csrf_token;
+
+    return $csrf_token;
+}
+
+/**
+ * @param void
+ */
+function checkToken()
+{
+    $token = filter_input(INPUT_POST, 'csrf_token');
+    if(empty($token) || !isset($_SESSION['csrf_token']) || $token != $_SESSION['csrf_token']){
+        print "不正アクセスです。";
+        exit;
+    }
+    unset($_SESSION['csrf_token']); //多重リクエスト対策
 }

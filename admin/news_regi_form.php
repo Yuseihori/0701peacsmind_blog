@@ -28,6 +28,9 @@ require_once "nav.php";
         </div>
 
         <input type="submit" value="登録する" class="btn btn-dark">
+
+        <!-- セットトークン(この画面からしかデータ入れられないよ)シーサーフ対策 -->
+        <input type="hidden" name="csrf_token" value="<?= setToken() ?>">
     </form>
 
 </section>
